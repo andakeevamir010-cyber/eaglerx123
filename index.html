@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Custom Eaglercraft 1.8 Client</title>
+<style>
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background-color: #000; }
+    canvas { width: 100%; height: 100%; display: block; }
+</style>
+<!-- Link to the pre-compiled WASM-GC runtime engines from an open source CDN -->
+<script type="text/javascript" src="https://jsdelivr.net"></script>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script type="text/javascript">
+    window.addEventListener("load", function(){
+        const relayId = Math.floor(Math.random() * 3);
+        window.eaglercraftXOpts = {
+            container: "canvas",
+            assetsURI: "https://jsdelivr.net",
+            localesURI: "https://jsdelivr.net",
+            // Add your own custom Minecraft servers here
+            servers: [
+                { addr: "wss://://eaglercraft.com", name: "Official Eaglercraft Relay" }
+            ]
+        };
+        main();
+    });
+</script>
+</body>
+</html>
